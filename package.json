@@ -1,0 +1,22 @@
+{
+  "name": "missing-value-site",
+  "version": "1.0.0",
+  "description": "CSV fayllarında missing value-ları handle etmək üçün web aləti",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server . -p 8080 -o -c-1",
+    "build": "echo 'Statik proje - build lazım deyil'",
+    "start": "http-server . -p 8080"
+  },
+  "keywords": [
+    "missing-value",
+    "csv",
+    "imputation",
+    "data-processing"
+  ],
+  "author": "Ali",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
