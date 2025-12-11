@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Value İmputasiya Aləti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Missing Value İmputasiya Aləti</h1>
+            <p>CSV faylınızı yükləyin və missing value-ları avtomatik doldurun</p>
+        </header>
+
+        <div id="imputationSection" class="imputation-section">
+            <h3>Missing Value İmputasiyası</h3>
+            <div class="column-selection">
+                <label for="columnSelect">Sütun seçin:</label>
+                <select id="columnSelect">
+                    <option value="">Sütun seçin...</option>
+                </select>
+            </div>
+
+            <div class="imputation-options">
+                <div class="option-group">
+                    <h4>Riyazi İmputasiya</h4>
+                    <button class="btn btn-secondary imputation-btn" data-method="mean">Orta Qiymət (Mean)</button>
+                    <button class="btn btn-secondary imputation-btn" data-method="median">Median</button>
+                </div>
+
+                <div class="option-group">
+                    <h4>Digər Seçimlər</h4>
+                    <button class="btn btn-danger imputation-btn" data-method="delete">Missing Value olan sətirləri sil</button>
+                </div>
+            </div>
+
+            <div class="actions">
+                <label for="fileInput2" style="display: inline-block;">
+                    <input type="file" id="fileInput2" accept=".csv" hidden>
+                    <span class="btn btn-success" style="cursor: pointer;">CSV Yüklə</span>
+                </label>
+                <button id="resetBtn" class="btn btn-outline">Sıfırla</button>
+                <button id="downloadBtn" class="btn btn-success">Nəticəni Yüklə</button>
+            </div>
+        </div>
+
+        <div id="dataSection" class="data-section hidden">
+            <div class="data-info">
+                <h2>Verilənlər Haqqında Məlumat</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Ümumi Sətir:</span>
+                        <span class="stat-value" id="totalRows">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Ümumi Sütun:</span>
+                        <span class="stat-value" id="totalColumns">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Missing Value-lar:</span>
+                        <span class="stat-value" id="missingValues">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead id="tableHead"></thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
+
+        <div class="upload-section hidden" id="uploadSection">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                    </svg>
+                    <p>CSV faylınızı buraya sürüşdürün və ya klikləyin</p>
+                    <input type="file" id="fileInput" accept=".csv" hidden>
+                </div>
+            </div>
+            <button id="uploadBtn" class="btn btn-primary">Fayl Seçin</button>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fayl emal olunur...</p>
+        </div>
+
+        <div id="message" class="message hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "http-server . -p 8080 -o -c-1",
-    "build": "echo 'Statik proje - build lazım deyil'",
+    "build": "echo 'Static site - no build needed'",
     "start": "http-server . -p 8080"
   },
   "keywords": [
