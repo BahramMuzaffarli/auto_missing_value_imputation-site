@@ -1,5 +1,5 @@
 # Missing Value İmputasiya Aləti
-
+https://auto-missing-value-imputation-site.vercel.app/
 Bu veb sayt CSV fayllarındakı missing value-ları avtomatik doldurmaq üçün nəzərdə tutulub.
 
 ## Xüsusiyyətlər
